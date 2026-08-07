@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Digital</title>
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <header class="brand">
+                <h1>📚 Biblioteca</h1>
+            </header>
+            <div class="nav-esquerda">
+                <ul>
+                    <li id="btn-listar">Livros</li>
+                    <li><button id="btnOpenModal" class="nav-link btn-add">+ Adicionar Livro</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="content-container">
+        <!-- Hero / Carrossel -->
+        <article class="hero-card">
+            <div class="carrossel">
+                <button class="carrossel-btn prev" aria-label="Anterior">&#10094;</button>
+                <div class="carrossel-img">
+                    <div class="badge">Destaque do Mês</div>
+                    <h2>O Senhor dos Anéis</h2>
+                    <p>J.R.R. Tolkien • Fantasia</p>
+                </div>
+                <button class="carrossel-btn next" aria-label="Próximo">&#10095;</button>
+            </div>
+
+            <section class="desc-site">
+                <h2>Bem-vindo à sua coleção</h2>
+                <p>Gerencie seus livros favoritos, acompanhe suas leituras e adicione novos títulos à sua biblioteca pessoal de forma simples e intuitiva.</p>
+            </section>
+        </article>
+
+        <!-- Seção de Livros -->
+        <section class="books-section">
+            <div class="section-header">
+                <h2>Seus Livros</h2>
+                <span class="count-badge" id="bookCount">4 Livros</span>
+            </div>
+             <div class="books-grid">
+               
+            </div>  
+
+        </section>
+    </main>
+
+    <!-- Estrutura do Modal de Adicionar Livro -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-container" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
+            <header class="modal-header">
+                <h2 id="modalTitle">📖 Adicionar Novo Livro</h2>
+                <button class="modal-close" id="btnCloseModal" aria-label="Fechar Modal">&times;</button>
+            </header>
+
+            <form id="addBookForm" class="modal-form">
+
+    <div class="form-group">
+        <label for="titulo">Título *</label>
+        <input type="text" id="titulo" name="titulo" required>
+    </div>
+
+    <div class="form-group">
+        <label for="autor">Autor *</label>
+        <input type="text" id="autor" name="autor" required>
+    </div>
+
+    <div class="form-group">
+        <label for="isbn">ISBN *</label>
+        <input type="text" id="isbn" name="isbn" required>
+    </div>
+
+    <div class="form-group">
+        <label for="editora">Editora *</label>
+        <input type="text" id="editora" name="editora" required>
+    </div>
+
+    <div class="form-row">
+
+        <div class="form-group">
+            <label for="categoria">Categoria *</label>
+            <input type="text" id="categoria" name="categoria" required>
+        </div>
+
+        <div class="form-group">
+            <label for="tipo">Tipo *</label>
+            <select id="tipo" name="tipo">
+                <option value="LIVRO">Livro</option>
+                <option value="REVISTA">Revista</option>
+                <option value="HQ">HQ</option>
+                <option value="MANGA">Mangá</option>
+            </select>
+        </div>
+
+    </div>
+
+    <div class="form-row">
+
+        <div class="form-group">
+            <label for="classificacaoIndicativa">Classificação</label>
+            <select id="classificacaoIndicativa" name="classificacaoIndicativa">
+                <option value="LIVRE">Livre</option>
+                <option value="10">10 anos</option>
+                <option value="12">12 anos</option>
+                <option value="14">14 anos</option>
+                <option value="16">16 anos</option>
+                <option value="18">18 anos</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="anoPublicacao">Ano</label>
+            <input type="number" id="anoPublicacao" name="anoPublicacao">
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <label for="quantidadeDisponivel">Quantidade Disponível</label>
+        <input type="number" id="quantidadeDisponivel" name="quantidadeDisponivel" value="1" min="1">
+    </div>
+
+    <footer class="modal-footer">
+        <button type="button" class="btn-cancelar" id="btnCancelModal">Cancelar</button>
+        <button type="submit" class="btn-salvar">Salvar Item</button>
+    </footer>
+
+</form>
+        </div>
+    </div>
+    
+
+    <footer class="footer">
+        <p>&copy; 2026 Biblioteca Digital. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="./src/js/script.js"></script>
+</body>
+</html>
